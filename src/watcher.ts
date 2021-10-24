@@ -4,7 +4,7 @@ import * as gaze from 'gaze';
 import * as htmlparser from 'htmlparser';
 import * as juice from 'juice';
 import * as fs from 'mz/fs';
-import { renderSync } from 'node-sass';
+import { renderSync } from 'sass';
 import { extname, parse as parseFileName, relative } from 'path';
 import * as pugcodegen from 'pug-code-gen';
 import * as puglex from 'pug-lexer';

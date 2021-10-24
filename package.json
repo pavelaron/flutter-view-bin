@@ -6,6 +6,10 @@
   "bin": {
     "flutter-view": "./cli.js"
   },
+  "scripts": {
+    "build": "pkg ./cli.js --output ./dist/bin/flutter-view",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "directories": {
     "test": "test"
   },
@@ -23,7 +27,6 @@
     "juice": "^4.3.2",
     "lodash": "^4.17.15",
     "mz": "^2.7.0",
-    "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "pug": "^2.0.4",
     "pug-code-gen": "^2.0.2",
@@ -32,17 +35,16 @@
     "pug-load": "^2.0.12",
     "pug-parser": "^5.0.1",
     "pug-runtime": "^2.0.5",
+    "sass": "^1.43.3",
     "style-parser": "^1.1.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.136",
     "@types/mz": "0.0.32",
-    "@types/node-sass": "^3.10.32",
-    "@types/pug": "^2.0.4"
-  },
-  "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "@types/node": "^16.11.4",
+    "@types/pug": "^2.0.4",
+    "@types/sass": "^1.16.1",
+    "pkg": "^5.3.3"
   },
   "author": "Christian Vogel",
   "license": "ISC",
