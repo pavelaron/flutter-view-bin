@@ -7,7 +7,7 @@
     "flutter-view": "./cli.js"
   },
   "scripts": {
-    "build": "pkg ./cli.js --output ./dist/bin/flutter-view",
+    "build": "pkg . --output ./dist/bin/flutter-view",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "directories": {
@@ -45,6 +45,9 @@
     "@types/pug": "^2.0.4",
     "@types/sass": "^1.16.1",
     "pkg": "^5.3.3"
+  },
+  "pkg": {
+    "scripts": "dist/**/*.js"
   },
   "author": "Christian Vogel",
   "license": "ISC",
