@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "pkg . --output ./dist/bin/flutter-view",
+    "install": "sudo cp -i ./dist/bin/flutter-view /usr/local/bin/flutter-view",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "directories": {
