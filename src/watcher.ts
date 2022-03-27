@@ -28,6 +28,7 @@ export interface Options {
 	indentation: 2, // the indentation of the code to generate
 	plugins?: string[],
 	imports: string[], // a list of imports to put in every generated file
+	ignores: string[], // a list of ignore statements at the top of every generated file
 	tagClasses: { // a map of tags with their asociated classes
 		div: string, // the class to represent a div in dart code
 		text: string // the class to represent text in dart code
@@ -37,7 +38,6 @@ export interface Options {
 		backgroundAssetImg: string // the class to represent a background asset image
 	}, 
 	multiChildClasses: string[], // a list of classes that have a children constructor parameter
-
 	autowrapChildren?: true, // use a wrapper child if a tag without a children parameter has multiple children in the template
 	autowrapChildrenClass?: string, // the class to use as the child wrapper
 	showPugLineNumbers?: boolean // show Pug line numbers in the dart file?
@@ -83,6 +83,22 @@ const defaultOptions: Options = {
 	imports: [
 		'package:flutter/material.dart',
 		'package:flutter/cupertino.dart'
+	],
+	ignores: [
+		// const is not always detectable, so by default suppress the errors
+		'prefer_const_constructors',
+		'non_constant_identifier_names',
+		// we sometimes do unnecessary code but it should not cause performance issues
+		'unnecessary_import',
+		'dead_code',
+		'unused_element',
+		'unnecessary_cast',
+		'unnecessary_string_interpolations',
+		'invalid_null_aware_operator',
+		// for now we use these because classes create containers and we want them to be styleable
+		// later we may be able to detect if we have styles and use Nil and SizedBox containers where possible
+		'avoid_unnecessary_containers',
+		'sized_box_for_whitespace'
 	],
 	tagClasses: {
 		text: 'Text',
